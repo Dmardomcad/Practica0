@@ -27,7 +27,7 @@ Ejemplo 3
  */
 
 fun gameWithCards(number: Int){
-    val cards = mutableListOf<Int>()
+    val cards = mutableSetOf<Int>()
     var totalNumber = 0
     var actualNumber = 1
 
@@ -35,10 +35,14 @@ fun gameWithCards(number: Int){
         if(totalNumber + actualNumber <= number){
             cards.add(actualNumber)
             totalNumber += actualNumber
+            if(cards.contains(actualNumber)){
+                println("$actualNumber")
+            }
 
         } else {
-            println("numerooo $actualNumber")
+            println("testing...$actualNumber")
             actualNumber++
+
             return
         }
         actualNumber++
@@ -47,8 +51,8 @@ fun gameWithCards(number: Int){
 }
 
 fun main(){
-    gameWithCards(1)
+    //gameWithCards(1)
     gameWithCards(6)
-    gameWithCards(10)
-    gameWithCards(13)
+    //gameWithCards(10)
+    //gameWithCards(13)
 }
