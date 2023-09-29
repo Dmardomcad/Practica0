@@ -18,7 +18,7 @@ fun moda(numbers: List<Int>){
     val mostCommon = counting.values.max()
 
     val mode = counting.filter { it.value == mostCommon }.keys.toList().first()
-    println("La moda es $mode")
+    println("The most repeated number is $mode")
 }
 
 fun mediana(numbers: List<Int>){
@@ -36,7 +36,6 @@ fun mediana(numbers: List<Int>){
         println("The median is $medianaImpar")
     }
 
-    //println(numbersSorted)
 
 }
 

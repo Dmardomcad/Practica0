@@ -2,7 +2,6 @@ package com.example.practicaaprogramar
 
 /*
 
-
 Tarea 10 - Juego de mesa
 Estamos construyendo un juego de mesa, y para el sistema de puntuación se nos ha ocurrido usar cartas de manera que sumando sus valores podamos llegar a cualquier puntuación.
 Las cartas son caras así que NO queremos cartas REPETIDAS.
@@ -27,12 +26,29 @@ Ejemplo 3
 
  */
 
-fun playTime(number: Int){
-    val cards: List<Int>
+fun gameWithCards(number: Int){
+    val cards = mutableListOf<Int>()
+    var totalNumber = 0
+    var actualNumber = 1
 
+    while(totalNumber < number){
+        if(totalNumber + actualNumber <= number){
+            cards.add(actualNumber)
+            totalNumber += actualNumber
 
+        } else {
+            println("numerooo $actualNumber")
+            actualNumber++
+            return
+        }
+        actualNumber++
+    }
+    println("You get ${cards.size} cards: $cards")
 }
 
 fun main(){
-    println("Soy la tarea diez")
+    gameWithCards(1)
+    gameWithCards(6)
+    gameWithCards(10)
+    gameWithCards(13)
 }
